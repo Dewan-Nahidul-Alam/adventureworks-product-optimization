@@ -85,19 +85,6 @@ The project enabled management to make centralized, insight-driven strategic dec
 
 ---
 
-## 📂 Repository Structure
-
-```bash
-├── data/
-├── sql/
-├── powerbi-dashboard/
-├── etl-pipeline/
-├── reports/
-└── README.md
-```
-
----
-
 ## 🔗 Connect With Me
 
 [LinkedIn](https://www.linkedin.com/in/dewan-nahidul-alam-niloy/)  
