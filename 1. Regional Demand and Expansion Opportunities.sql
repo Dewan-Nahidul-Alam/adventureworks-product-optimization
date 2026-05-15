@@ -47,6 +47,4 @@ SELECT CountryRegionCode,
     ) AS TerritoryShareWithinCountry -- Territory's percentage contribution within its country
 FROM PivotTable -- Rank territories by sales volume within each country
 ORDER BY CountryRegionCode,
-    -- Sort by country
     TerritoryTotalQuantity DESC;
--- Show highest-sales territories first
