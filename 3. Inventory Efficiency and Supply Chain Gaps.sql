@@ -1,4 +1,4 @@
--- Total Sales Volume and capture Inventory per product
+-- Total Sales Volume and Inventory per product
 WITH ProductSalesPerformance AS (
     SELECT p.ProductID,
         p.ProductName,
