@@ -1,4 +1,4 @@
--- Total Sales Volume and capture Inventory per product
+-- Total Sales Volume and Inventory per product
 WITH ProductSalesPerformance AS (
     SELECT p.ProductID,
         p.ProductName,
@@ -12,7 +12,7 @@ WITH ProductSalesPerformance AS (
         p.ProductCategoryName,
         p.InventoryQuantity
 ),
--- Global averages for the entire catalogue
+-- Global averages for the entire catalog
 GlobalAverages AS (
     SELECT AVG(CAST(TotalVolumeSold AS FLOAT)) AS AvgGlobalVolume,
         AVG(CAST(InventoryQuantity AS FLOAT)) AS AvgGlobalInventory
