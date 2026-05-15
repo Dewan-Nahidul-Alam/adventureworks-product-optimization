@@ -1,11 +1,11 @@
 WITH MaxDateAnchor AS (
-    -- STEP 1: Identify the absolute latest date for TTM anchoring
+    -- Identify the absolute latest date for TTM anchoring
     SELECT MAX(dd.[Date]) AS LatestDate
     FROM ProductDevelopment.FactSales fs
         JOIN ProductDevelopment.DimDate dd ON fs.OrderDate = dd.DateKey
 ),
 TTMData AS (
-    -- STEP 2: Aggregate margins for current vs. prior 12-month windows
+    -- Aggregate margins for current vs. prior 12-month windows
     SELECT dp.ProductSubcategoryName,
         SUM(
             CASE
@@ -26,7 +26,7 @@ TTMData AS (
         JOIN ProductDevelopment.DimDate dd ON fs.OrderDate = dd.DateKey
         CROSS JOIN MaxDateAnchor mda
     GROUP BY dp.ProductSubcategoryName
-) -- STEP 3: Calculate the Growth Rates for the Top 10 Profit Drivers
+) -- Calculate the Growth Rates for the Top 10 Profit Drivers
 SELECT TOP 10 ProductSubcategoryName,
     CurrentTTMMargin,
     PriorTTMMargin,
