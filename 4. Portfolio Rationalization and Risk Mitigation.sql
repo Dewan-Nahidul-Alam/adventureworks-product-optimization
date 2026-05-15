@@ -233,7 +233,7 @@ SELECT pa.ProductID,
     END AS PriorityLevel
 FROM ProductAggregated pa
     CROSS JOIN GlobalAvgQuarterlyRevenue ga
-WHERE pa.HasRecentSales = 1 -- Only show products with recent sales
+WHERE pa.HasRecentSales = 1 -- only show products with recent sales
     OR pa.TotalQuartersWithSales > 0
 ORDER BY pa.ProductCategoryName,
     CASE
