@@ -36,7 +36,7 @@ ProductQuarterlySales AS (
         SUM(f.TotalOrderQuantity) AS QuarterlyUnits,
         SUM(f.TotalSales) AS QuarterlyRevenue,
         COUNT(DISTINCT f.SalesOrderID) AS QuarterlyOrders,
-        -- Calculate quarter rank for each product (1 = most recent quarter for that product)
+        -- Calculate quarter rank for each product
         ROW_NUMBER() OVER (
             PARTITION BY p.ProductID
             ORDER BY d.Year DESC,
@@ -199,12 +199,10 @@ SELECT pa.ProductID,
         WHEN pa.LatestQuarterRevenue < ISNULL(pa.PreviousQuarterRevenue, 0) * 0.95 THEN 'Downward'
         ELSE 'Flat'
     END AS ShortTermMomentum,
-    -- Product average quarterly revenue
     CAST(
         ISNULL(pa.AvgQuarterlyRevenue, 0) AS DECIMAL(10, 2)
     ) AS AvgQuarterlyRevenue,
     pa.TotalQuartersWithSales,
-    -- Comprehensive recommendation
     CASE
         -- No recent sales
         WHEN pa.HasRecentSales = 0 THEN 'Consider Discontinuation - No Recent Sales' -- High cost, low sales, and declining
