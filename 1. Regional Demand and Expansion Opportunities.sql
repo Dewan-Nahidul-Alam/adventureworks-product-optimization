@@ -48,4 +48,4 @@ SELECT CountryRegionCode,
 FROM PivotTable -- Rank territories by sales volume within each country
 ORDER BY CountryRegionCode,
     TerritoryTotalQuantity DESC
-    ;
+;
