@@ -37,4 +37,5 @@ SELECT TOP 10 ProductSubcategoryName,
         ELSE (CurrentTTMMargin - PriorTTMMargin) / NULLIF(PriorTTMMargin, 0)
     END AS MarginGrowthRate
 FROM TTMData
-ORDER BY CurrentTTMMargin DESC;
+ORDER BY CurrentTTMMargin DESC
+;
