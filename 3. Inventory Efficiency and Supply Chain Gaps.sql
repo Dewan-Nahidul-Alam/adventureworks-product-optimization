@@ -37,4 +37,5 @@ SELECT psp.ProductName,
 FROM ProductSalesPerformance psp,
     GlobalAverages ga
 WHERE psp.InventoryQuantity IS NOT NULL
-ORDER BY psp.TotalVolumeSold DESC;
+ORDER BY psp.TotalVolumeSold DESC
+;
