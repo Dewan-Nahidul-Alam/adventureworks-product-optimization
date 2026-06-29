@@ -241,4 +241,5 @@ ORDER BY pa.ProductCategoryName,
         WHEN ISNULL(pa.AvgRecentQoQGrowth, 0) < -10 THEN 2
         WHEN ISNULL(pa.AvgRecentQoQGrowth, 0) BETWEEN -10 AND 10 THEN 3
         ELSE 4
-    END;
+    END
+;
